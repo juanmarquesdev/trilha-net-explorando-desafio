@@ -18,4 +18,38 @@ O seu programa deverá cálcular corretamente os valores dos métodos da classe 
 ![Diagrama de classe estacionamento](diagrama_classe_hotel.png)
 
 ## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+
+Verificar se a capacidade é maior ou igual ao número de hóspedes sendo recebido 
+~~~csharp
+    if (Suite.Capacidade >= hospedes.Count)
+    {
+        Hospedes = hospedes;
+    }
+~~~
+
+Retornar uma exception caso a capacidade seja menor que o número de hóspedes recebido
+~~~csharp
+    else
+    {
+        throw new Exception("A capacidade de pessoas é menor que o número de hospedes recebido.");
+    }
+~~~
+
+Retorna a quantidade de hóspedes (propriedade Hospedes)
+~~~csharp
+    return Hospedes.Count;
+~~~
+
+Retorna o valor da diária
+Cálculo: DiasReservados X Suite.ValorDiaria
+~~~csharp
+    decimal valor = DiasReservados * Suite.ValorDiaria;
+~~~
+
+Caso os dias reservados forem maior ou igual a 10, conceder um desconto de 10%
+~~~csharp
+    if (DiasReservados >= 10)
+    {
+        valor -= (valor * 0.1M);
+    }
+~~~
