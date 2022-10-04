@@ -14,7 +14,7 @@
 *.userprefs
 
 # Debug VSCode
-.vscode
+/.vscode
 
 # Mono auto generated files
 mono_crash.*
